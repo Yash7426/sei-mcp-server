@@ -4,10 +4,11 @@ import startServer from "./server.js";
 import express, { Request, Response } from "express";
 import cors from "cors";
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { config as envConfig } from "../core/config.js";
 
-// Environment variables - hardcoded values
-const PORT = 3001;
-const HOST = "0.0.0.0";
+// Use environment variables from env config
+const PORT = envConfig.port;
+const HOST = envConfig.host;
 
 console.error(`Configured to listen on ${HOST}:${PORT}`);
 
